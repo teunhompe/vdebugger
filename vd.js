@@ -33,14 +33,13 @@ javascript:(function() {
 	var G7URL = getG7URL();
 	var TOInfo = getTouroperatorInfo();
 	
-	
-	if(G7URL && TOInfo[0]) {
-		var tourOperatorInfo = (TOInfo[0]) ? 
-								"Offer from " + TOInfo[0] + " (" + 
-									(TOInfo[1]) ? TOInfo[1] :
-									"Unknown touroperatorcode." + ")" 
-								: "Offer unavailable";
+	if(G7URL) {
 		var G7Link = (G7URL) ? "<a style=\"color: #38b4f2; text-decoration: underline;\" href=\""+ G7URL +"\" target=\"_blank\">Check the TripAPI logs</a>" : "";
+		if(TOInfo[0]) {
+			var tourOperatorInfo = "Offer from " + TOInfo[0];
+			tourOperatorInfo += " (" + (TOInfo[1] ? TOInfo[1] : "Unknown touroperatorcode.") + ")"
+		}
+		else tourOperatorInfo = "Offer unavailable";
 		offerInfo.innerHTML = tourOperatorInfo + "<br/>" + G7Link;
 	}
 	else offerInfo.innerHTML = "Please check price to get offer info";
@@ -50,10 +49,6 @@ javascript:(function() {
 		var accoLink = "<a href=\"https://tools.elmar.nl/accommodations/" + accoID + "\" target=\"_blank\">Accomanager</a>";
 		offerInfo.innerHTML += "<br/>" + accoLink;
 	}
-
-
-
-	
 
 	function getAccoID() {
 		if(dataLayer) return dataLayer[0].accoId;
