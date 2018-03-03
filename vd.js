@@ -33,7 +33,7 @@ javascript:(function() {
 		var offerInfoContainerClose = document.createElement("a");
 		offerInfoContainerClose.style = "position: absolute; top: 1em; right: 1em; font-size: .75em; text-decoration: underline;"
 		offerInfoContainerClose.href = "javascript:(function() { document.getElementById(\"offerInfoContainer\").remove(); })();";
-		offerInfoContainerClose.innerHTML = "Sluiten"
+		offerInfoContainerClose.innerHTML = "Close"
 		offerInfoContainer.appendChild(offerInfoContainerClose);
 	}
 
