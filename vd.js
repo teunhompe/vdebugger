@@ -16,7 +16,8 @@ javascript:(function() {
 					'XC':'Thomas Cook Eigen Vervoer',
 					'YVD':'VakantieDiscounter',
 	};
-
+	
+	var linkStyle = "color: #38b4f2; text-decoration: underline;";
 
 	var offerInfo = document.getElementById("offerInfo");
 	if(!offerInfo) {
@@ -34,7 +35,15 @@ javascript:(function() {
 	var TOInfo = getTouroperatorInfo();
 	
 	if(G7URL) {
-		var G7Link = (G7URL) ? "<a style=\"color: #38b4f2; text-decoration: underline;\" href=\""+ G7URL +"\" target=\"_blank\">Check the TripAPI logs</a>" : "";
+		if(G7URL) { 
+			G7Link = document.createElement("a");
+			G7Link.style = linkStyle;
+			G7Link.href = G7URL;
+			G7Link.target = "_blank";
+			G7Link.innerHTML = "Check the TripAPI logs";
+		}
+		else G7Link = "";
+		//<a style=\"\" href=\""+ G7URL +"\" target=\"_blank\">Check the TripAPI logs</a>" : "";
 		if(TOInfo[0]) {
 			var tourOperatorInfo = "Offer from " + TOInfo[0];
 			tourOperatorInfo += " (" + (TOInfo[1] ? TOInfo[1] : "Unknown touroperatorcode.") + ")"
