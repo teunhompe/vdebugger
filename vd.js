@@ -38,8 +38,8 @@ javascript:(function() {
 		if(G7URL) { 
 			G7Link = document.createElement("a");
 			G7Link.style = linkStyle;
-			G7Link.href = G7URL;
-			G7Link.target = "_blank";
+			G7Link.setAttribute('href', G7URL);
+			G7Link.setAttribute('target', "_blank");
 			G7Link.innerHTML = "Check the TripAPI logs";
 		}
 		else G7Link = "";
