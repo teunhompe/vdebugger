@@ -35,20 +35,20 @@ javascript:(function() {
 	var TOInfo = getTouroperatorInfo();
 	
 	if(G7URL) {
-		G7Link = (G7URL) ? "<a style=\"" + linkStyle + "\" href=\""+ G7URL +"\" target=\"_blank\">Check the TripAPI logs</a>" : "";
+		G7Link = (G7URL) ? "<a style=\"" + linkStyle + "\" href=\""+ G7URL +"\" target=\"_blank\">TripAPI XML logs</a>" : "";
 		if(TOInfo[0]) {
 			var tourOperatorInfo = "Offer from " + TOInfo[0];
 			tourOperatorInfo += " (" + (TOInfo[1] ? TOInfo[1] : "Unknown touroperatorcode.") + ")"
 		}
 		else tourOperatorInfo = "Offer unavailable";
-		offerInfo.innerHTML = tourOperatorInfo + "<br/>" + G7Link;
+		offerInfo.innerHTML = tourOperatorInfo + " | " + G7Link;
 	}
 	else offerInfo.innerHTML = "Please check price to get offer info";
 	
 	var accoID = getAccoID();
 	if(accoID) {
 		var accoLink = "<a style=\"" + linkStyle + "\" href=\"https://tools.elmar.nl/accommodations/" + accoID + "\" target=\"_blank\">Accomanager</a>";
-		offerInfo.innerHTML += "<br/>" + accoLink;
+		offerInfo.innerHTML += " | " + accoLink;
 	}
 
 	function getAccoID() {
