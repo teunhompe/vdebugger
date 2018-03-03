@@ -29,6 +29,12 @@ javascript:(function() {
 		offerInfo.style = "border: 4px solid #ff007d; margin: 0; padding: .5em; ";
 		document.body.prepend(offerInfoContainer);
 		offerInfoContainer.appendChild(offerInfo);
+		
+		var offerInfoContainerClose = document.createElement("a");
+		offerInfoContainerClose.style = "position: absolute; top: 1em; right: 1em; font-size: .75em; text-decoration: underline;"
+		offerInfoContainerClose.href = "javascript:(function() { document.getElementById(\"offerInfoContainer\").remove(); })();";
+		offerInfoContainerClose.innerHTML = "Sluiten"
+		offerInfoContainer.appendChild(offerInfoContainerClose);
 	}
 
 	var G7URL = getG7URL();
