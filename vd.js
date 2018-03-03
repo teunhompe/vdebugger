@@ -35,15 +35,7 @@ javascript:(function() {
 	var TOInfo = getTouroperatorInfo();
 	
 	if(G7URL) {
-		if(G7URL) { 
-			G7Link = document.createElement("a");
-			G7Link.style = linkStyle;
-			G7Link.setAttribute('href', G7URL);
-			G7Link.setAttribute('target', "_blank");
-			G7Link.innerHTML = "Check the TripAPI logs";
-		}
-		else G7Link = "";
-		//<a style=\"\" href=\""+ G7URL +"\" target=\"_blank\">Check the TripAPI logs</a>" : "";
+		G7Link = (G7URL) ? "<a style=\"" + linkStyle + "\" href=\""+ G7URL +"\" target=\"_blank\">Check the TripAPI logs</a>" : "";
 		if(TOInfo[0]) {
 			var tourOperatorInfo = "Offer from " + TOInfo[0];
 			tourOperatorInfo += " (" + (TOInfo[1] ? TOInfo[1] : "Unknown touroperatorcode.") + ")"
@@ -55,7 +47,7 @@ javascript:(function() {
 	
 	var accoID = getAccoID();
 	if(accoID) {
-		var accoLink = "<a href=\"https://tools.elmar.nl/accommodations/" + accoID + "\" target=\"_blank\">Accomanager</a>";
+		var accoLink = "<a style=\"" + linkStyle + "\" href=\"https://tools.elmar.nl/accommodations/" + accoID + "\" target=\"_blank\">Accomanager</a>";
 		offerInfo.innerHTML += "<br/>" + accoLink;
 	}
 
