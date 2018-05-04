@@ -12,9 +12,10 @@ javascript:(function() {
 					'NE':'Neckermann',
 					'RI':'Riva',
 					'SA':'Sunair',
+			       		'SLR': 'Schauinsland-Reisen',
 					'TC':'Thomas Cook Vliegen',
 					'XC':'Thomas Cook Eigen Vervoer',
-					'YVD':'VakantieDiscounter',
+					'YVD':'VakantieDiscounter'
 	};
 	
 	var linkStyle = "color: #38b4f2; text-decoration: underline;";
